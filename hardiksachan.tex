@@ -1,0 +1,195 @@
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
+\documentclass[a4paper,12pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% % fontspec allows you to use TTF/OTF fonts directly
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % modified for ShareLaTeX use
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+
+%for social icons
+\usepackage{fontawesome5}
+
+%debug page outer frames
+%\usepackage{showframe}
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+% \begin{tabularx}{\linewidth}{ @{}X X@{} }
+% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
+% \raisebox{-0.05\height}\faGithub\ username \ | \
+% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
+% \end{tabularx}
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Hardik Sachan} \\[7.5pt]
+\href{https://github.com/Hardik5862}{\raisebox{-0.05\height}\faGithub\ Hardik5862} \ $|$ \ 
+\href{https://www.linkedin.com/in/hardiksachan/}{\raisebox{-0.05\height}\faLinkedin\ hardiksachan} \ $|$ \ 
+\href{https://hardiksachan.netlify.app/}{\raisebox{-0.05\height}\faGlobe \ hardiksachan} \ $|$ \ 
+\href{mailto:hardik0casr@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ hardik0casr@gmail.com} \ $|$ \ 
+\href{tel:+918840164514}{\raisebox{-0.05\height}\faMobile \ 8840164514} \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
+
+%Experience
+\section{Work Experience}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+    \textbf{Software Development Engineer} & - Calance Software Pvt. Ltd. \hfill June 2023 - Present  \\[3.75pt]
+    \multicolumn{2}{@{}X@{}}{
+    \begin{minipage}[t]{\linewidth}
+        \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+            \item[--] Developed backend application using Node.js, integrating multiple payment gateways via a unified UI.
+            \item[--] Built UI for Hospital based application in React.js, wrote functional tests using Playwright, and contributed to Python microservices using FastAPI.
+        \end{itemize}
+        \end{minipage}
+    }
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Software Engineer Intern} & - Calance Software Pvt. Ltd. \hfill Jan 2023 - May 2023  \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[--] Developed two in-house applications using Node.js, React.js, and Express.js.
+        \item[--] Added support in build workflow for build time environment variables and created a custom GitHub action.
+        \item[--] Added feature to synchronize data in timesheet applications written in PHP using Symfony framework.
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Software Development Engineer Intern} & - PARTH \hfill June 2022 - July 2022  \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[--] Developed frontend web application - OC Dashboard for managing freelancers inbuilt with a rich text editor using Angular 13 with a lighthouse score of 96.
+        \item[--] Created a backend app for the dashboard and for serving content to other apps using Nodejs, MongoDB, MySQL, Redis, and Firebase
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+%Projects
+\section{Projects}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{TicketShare} & - Microservice based full stack app \hfill \href{https://github.com/Hardik5862/ticketshare}{Source Code} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[--] Developed a web app where a user can buy and sell tickets using NextJS for the frontend.
+        \item[--] Created backend using Nodejs, Express, and typescript, MongoDB and Redis as databases; and Docker and Kubernetes to manage the containerized microservices.
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{React Super Chat} & - Real-time Chat App \hfill \href{https://react-super-chat-460bb.web.app}{Demo} - \href{https://github.com/Hardik5862/ticketshare}{Source Code} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[--] Made with react and firebase for group-based and private real-time chats.
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Education}
+\begin{tabularx}{\linewidth}{@{}l X@{}}	
+July 2019 - May 2023 & B.Tech. at \textbf{National Institute of Technology, Delhi} \hfill \normalsize (CGPA: 7.7/10) \\
+
+2019 & Class 12th at \textbf{Creative Convent College} \\
+
+2017 & Class 10th at \textbf{Creative Convent College} \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+\section{Skills}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+Programming Languages &  \normalsize{C/C++, Javascript, TypeScript, Python, HTML, CSS, SQL}\\
+Frameworks and Libraries  &  \normalsize{ReactJS, NextJS, Angular, NodeJS, ExpressJS, NestJS, FastAPI, Pytest, Playwright, Firebase, Symfony}\\
+Other tools  &  \normalsize{Git, Github, VS Code, Docker, Kubernetes}\\
+\end{tabularx}
+
+\section{Coding Profiles}
+\begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+    \item[--] \href{https://leetcode.com/hardik0casr}{Leetcode}
+    \item[--] \href{https://auth.geeksforgeeks.org/user/hardik0casr/profile}{Geeksforgeeks}
+\end{itemize}
+
+\end{document}
